@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import productsData from '../data/products-data.js';
+---
+
+<BaseLayout
+  title="Product Detail | CHINPK Packaging"
+  description="CHINPK product detail - Premium PET plastic packaging specifications, features, and applications."
+>
+  <div class="breadcrumb" id="breadcrumb"><div class="container"><a href="/">Home</a><span class="separator">/</span><a href="/products">Products</a><span class="separator" id="bc-sep" style="display:none">/</span><span class="current" id="bc-category"></span><span class="separator" id="bc-sep2" style="display:none">/</span><span class="current" id="bc-product"></span></div></div>
+
+  <section class="product-detail py-20" id="product-detail">
+    <div class="container">
+      <div id="loading" class="text-center py-20"><i class="fas fa-spinner fa-spin text-4xl" style="color:var(--color-primary)"></i><p class="text-gray-600 mt-4">Loading product details...</p></div>
+      <div id="error" class="text-center py-20" style="display:none"><i class="fas fa-exclamation-triangle text-5xl text-yellow-500 mb-4"></i><h2 class="text-2xl font-bold text-gray-900 mb-2">Product Not Found</h2><p class="text-gray-600 mb-6">The product you are looking for does not exist.</p><a href="/products" class="btn-primary">Browse All Products</a></div>
+      <div id="product-content" style="display:none">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div class="reveal-left" id="gallery-wrap" style="cursor:zoom-in">
+            <img id="product-image" src="" alt="Product Image" class="w-full rounded-lg shadow-lg" loading="lazy" />
+          </div>
+          <div class="reveal-right">
+            <span class="badge badge-green mb-2" id="product-category"></span>
+            <h1 class="text-3xl font-bold text-gray-900 mb-4" id="product-name"></h1>
+            <p class="text-gray-600 mb-6 text-lg" id="product-short-desc"></p>
+            <table class="w-full border-collapse mb-8" id="specs-table"><tbody></tbody></table>
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+              <div class="grid grid-cols-2 gap-4">
+                <div><p class="text-sm text-gray-500">Minimum Order</p><p class="text-lg font-bold text-gray-900" id="product-moq"></p></div>
+                <div><p class="text-sm text-gray-500">Lead Time</p><p class="text-lg font-bold text-gray-900" id="product-lead-time"></p></div>
+              </div>
+              <a href="/contact" class="block w-full text-center mt-4 text-white py-3 rounded-md font-semibold transition-colors" style="background:var(--color-primary)" id="quote-btn"><i class="fas fa-paper-plane mr-2"></i>Request Quote</a>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-400" id="product-share">
+              <span>Share:</span>
+              <a class="hover:text-gray-600" id="share-linkedin" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a class="hover:text-gray-600" id="share-whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a class="hover:text-gray-600" id="share-email" href="#"><i class="fas fa-envelope"></i></a>
+              <button class="hover:text-gray-600" id="share-copy" type="button"><i class="fas fa-link"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 reveal" id="full-description-section"><h3 class="text-xl font-bold text-gray-900 mb-4">Product Details</h3><p class="text-gray-600 leading-relaxed text-lg" id="product-description"></p></div>
+        <div class="mt-12 reveal" id="features-section"><h3 class="text-xl font-bold text-gray-900 mb-4">Key Features</h3><div class="grid md:grid-cols-2 gap-2" id="features-list"></div></div>
+        <div class="mt-12 reveal" id="applications-section"><h3 class="text-xl font-bold text-gray-900 mb-4">Applications</h3><div class="flex flex-wrap gap-3" id="applications-list"></div></div>
+        <div class="mt-16 reveal" id="related-section"><h3 class="text-xl font-bold text-gray-900 mb-6">Related Products</h3><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="related-list"></div></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<div class="rfq-bar" id="rfq-bar" style="display:none"><div class="rfq-bar-inner"><div class="rfq-bar-product"><img id="rfq-bar-img" src="" alt="" /><div><div class="name" id="rfq-bar-name"></div></div></div><div class="rfq-bar-actions"><a class="btn-rfq" id="rfq-bar-quote" href="/contact"><i class="fas fa-paper-plane"></i> <span>Request Quote</span></a><a class="btn-wa" id="rfq-bar-wa" href="#" target="_blank"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a></div></div></div>
+
+<div class="lightbox-overlay" id="lightbox" style="display:none"><button class="lightbox-close" type="button"><i class="fas fa-times"></i></button><img id="lightbox-img" src="" alt="" /></div>
+
+<script is:inline>
+  window.PRODUCTS = {JSON.stringify(productsData)};
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var params = new URLSearchParams(window.location.search);
+    var productId = params.get('id');
+    var product = window.PRODUCTS.find(function(p) { return p.id === productId; });
+
+    // Redirect to products if no ID or not found
+    if (!productId) { window.location.href = '/products'; return; }
+
+    document.getElementById('loading').style.display = 'none';
+    if (!product) {
+      document.getElementById('error').style.display = 'block';
+      return;
+    }
+
+    document.getElementById('product-content').style.display = 'block';
+    var bcCat = document.getElementById('bc-category');
+    var bcProd = document.getElementById('bc-product');
+    if (bcCat) { bcCat.textContent = product.categoryLabel || product.category; }
+    if (bcProd) { bcProd.textContent = product.name; }
+    document.getElementById('bc-sep').style.display = 'inline';
+    document.getElementById('bc-sep2').style.display = 'inline';
+
+    document.getElementById('product-image').src = product.image;
+    document.getElementById('product-image').alt = product.imageAlt || product.name;
+    document.getElementById('product-category').textContent = product.categoryLabel || '';
+    document.getElementById('product-name').textContent = product.name;
+    document.getElementById('product-short-desc').textContent = product.shortDesc || '';
+    document.getElementById('product-description').textContent = product.description || '';
+    document.getElementById('product-moq').textContent = product.specs && product.specs['MOQ'] ? product.specs['MOQ'] : 'Contact us';
+    document.getElementById('product-lead-time').textContent = product.leadTime || '15-25 days';
+
+    // Specs table
+    var specsTbody = document.querySelector('#specs-table tbody');
+    if (product.specs && specsTbody) {
+      for (var k in product.specs) {
+        var tr = document.createElement('tr');
+        tr.className = 'border-b border-gray-200';
+        tr.innerHTML = '<td class="py-3 text-gray-500 font-medium w-1/3">' + k + '</td><td class="py-3 text-gray-900">' + product.specs[k] + '</td>';
+        specsTbody.appendChild(tr);
+      }
+    }
+
+    // Features
+    if (product.features) {
+      document.getElementById('features-list').innerHTML = product.features.map(function(f) {
+        return '<div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg"><i class="fas fa-check-circle mt-0.5" style="color:var(--color-primary)"></i><div><p class="font-semibold text-gray-900">' + f.title + '</p><p class="text-gray-600 text-sm">' + f.desc + '</p></div></div>';
+      }).join('');
+    } else { document.getElementById('features-section').style.display = 'none'; }
+
+    // Applications
+    if (product.applications && product.applications.length) {
+      document.getElementById('applications-list').innerHTML = product.applications.map(function(a) {
+        return '<span class="bg-green-50 text-green-800 px-3 py-1 rounded-full text-sm font-medium">' + a + '</span>';
+      }).join('');
+    } else { document.getElementById('applications-section').style.display = 'none'; }
+
+    // Related products
+    if (product.relatedIds && product.relatedIds.length) {
+      var related = window.PRODUCTS.filter(function(p) { return product.relatedIds.indexOf(p.id) !== -1; }).slice(0, 3);
+      if (related.length) {
+        document.getElementById('related-list').innerHTML = related.map(function(r) {
+          return '<a href="/product-detail?id=' + r.id + '" class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 block hover:shadow-md transition-shadow"><img src="' + r.image + '" alt="' + (r.imageAlt || r.name) + '" class="w-full h-40 object-cover" loading="lazy" /><div class="p-4"><h4 class="font-semibold text-gray-900 text-sm">' + r.name + '</h4><p class="text-gray-500 text-xs mt-1">' + (r.categoryLabel || '') + '</p></div></a>';
+        }).join('');
+      } else { document.getElementById('related-section').style.display = 'none'; }
+    } else { document.getElementById('related-section').style.display = 'none'; }
+
+    // RFQ bar
+    var rfqBar = document.getElementById('rfq-bar');
+    if (rfqBar) {
+      rfqBar.style.display = 'block';
+      document.getElementById('rfq-bar-img').src = product.image;
+      document.getElementById('rfq-bar-name').textContent = product.name;
+      document.getElementById('rfq-bar-wa').href = 'https://wa.me/8615939482575?text=Hi, I am interested in ' + encodeURIComponent(product.name);
+      var observer = new IntersectionObserver(function(entries) { rfqBar.style.transform = entries[0].isIntersecting ? 'translateY(0)' : 'translateY(100%)'; }, { threshold: 0 });
+      observer.observe(document.getElementById('rfq-bar'));
+    }
+
+    // Lightbox
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    document.getElementById('gallery-wrap').addEventListener('click', function() { lightbox.style.display = 'flex'; lightboxImg.src = product.image; });
+    document.querySelector('.lightbox-close')?.addEventListener('click', function() { lightbox.style.display = 'none'; });
+    lightbox?.addEventListener('click', function(e) { if (e.target === lightbox) lightbox.style.display = 'none'; });
+
+    // Share
+    var url = window.location.href;
+    document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+    document.getElementById('share-whatsapp').href = 'https://wa.me/?text=' + encodeURIComponent(product.name + ' - ' + url);
+    document.getElementById('share-email').href = 'mailto:?subject=' + encodeURIComponent(product.name) + '&body=' + encodeURIComponent(url);
+    document.getElementById('share-copy').addEventListener('click', function() { navigator.clipboard.writeText(url); window.showToast?.('Link copied!'); });
+
+    document.title = product.name + ' | CHINPK Packaging';
+  });
+</script>
+
+<style>
+  .rfq-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #e5e7eb; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 40; transform: translateY(100%); transition: transform 0.3s; }
+  .rfq-bar-inner { max-width: 1280px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .rfq-bar-product { display: flex; align-items: center; gap: 0.75rem; }
+  .rfq-bar-product img { width: 3rem; height: 3rem; border-radius: 0.375rem; object-fit: cover; }
+  .rfq-bar-product .name { font-weight: 600; color: #1f2937; font-size: 0.9rem; }
+  .rfq-bar-actions { display: flex; gap: 0.5rem; }
+  .btn-rfq { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.5rem 1.25rem; background: var(--color-primary); color: white; border-radius: 0.375rem; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+  .btn-wa { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.5rem 1.25rem; background: var(--color-whatsapp); color: white; border-radius: 0.375rem; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+  .lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999; display: none; align-items: center; justify-content: center; }
+  .lightbox-overlay img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+</style>

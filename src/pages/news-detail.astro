@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import newsData from '../data/news.json';
+---
+
+<BaseLayout
+  title="Article | CHINPK Packaging Blog"
+  description="Read the latest PET packaging industry insights from CHINPK Packaging experts."
+>
+  <div class="breadcrumb"><div class="container"><a href="/">Home</a><span class="separator">/</span><a href="/news">News</a><span class="separator">/</span><span class="current" id="bc-title">Article</span></div></div>
+
+  <section class="py-20"><div class="container max-w-4xl">
+    <div id="loading" class="text-center py-20"><i class="fas fa-spinner fa-spin text-4xl" style="color:var(--color-primary)"></i><p class="text-gray-600 mt-4">Loading article...</p></div>
+    <div id="error" style="display:none" class="text-center py-20"><i class="fas fa-exclamation-triangle text-5xl text-yellow-500 mb-4"></i><h2 class="text-2xl font-bold text-gray-900 mb-2">Article Not Found</h2><p class="text-gray-600 mb-6">The article you're looking for doesn't exist.</p><a href="/news" class="btn-primary">Browse All Articles</a></div>
+    <div id="article-content" style="display:none">
+      <div class="article-header">
+        <span class="badge badge-green text-sm mb-4" id="article-category"></span>
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" id="article-title"></h1>
+        <div class="flex flex-wrap gap-4 text-sm text-gray-400 mb-6">
+          <span><i class="far fa-user mr-1"></i><span id="article-author"></span></span>
+          <span><i class="far fa-calendar-alt mr-1"></i><span id="article-date"></span></span>
+          <span><i class="far fa-clock mr-1"></i><span id="article-read-time"></span></span>
+        </div>
+        <div class="rounded-lg overflow-hidden mb-8"><img id="article-image" src="" alt="" class="w-full max-h-96 object-cover" /></div>
+      </div>
+      <div class="prose max-w-none text-gray-700 leading-relaxed text-lg" id="article-body"></div>
+      <div class="mt-12 pt-8 border-t border-gray-200"><h3 class="font-bold text-gray-900 mb-3">Tags</h3><div class="flex flex-wrap gap-2" id="article-tags"></div></div>
+      <div class="mt-8 text-center"><a href="/news" class="btn-primary"><i class="fas fa-arrow-left mr-2"></i>Back to News</a></div>
+    </div>
+  </div></section>
+</BaseLayout>
+
+<script is:inline>
+  var ARTICLES = {JSON.stringify(newsData)};
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var params = new URLSearchParams(window.location.search);
+    var articleId = params.get('id');
+    var article = ARTICLES.find(function(a) { return a.id === articleId; });
+
+    document.getElementById('loading').style.display = 'none';
+
+    if (!article) {
+      document.getElementById('error').style.display = 'block';
+      return;
+    }
+
+    document.getElementById('article-content').style.display = 'block';
+    document.getElementById('bc-title').textContent = article.title;
+    document.getElementById('article-category').textContent = article.category;
+    document.getElementById('article-title').textContent = article.title;
+    document.getElementById('article-author').textContent = article.author;
+    document.getElementById('article-date').textContent = article.date;
+    document.getElementById('article-read-time').textContent = article.readTime;
+    document.getElementById('article-image').src = article.image;
+    document.getElementById('article-image').alt = article.imageAlt || article.title;
+    document.getElementById('article-body').innerHTML = article.content;
+
+    if (article.tags) {
+      document.getElementById('article-tags').innerHTML = article.tags.map(function(t) {
+        return '<span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">' + t + '</span>';
+      }).join('');
+    }
+
+    document.title = article.title + ' | CHINPK Packaging Blog';
+  });
+</script>

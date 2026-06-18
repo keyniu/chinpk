@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import newsData from '../data/news.json';
+---
+
+<BaseLayout
+  title="News & Insights | CHINPK Packaging Blog"
+  description="CHINPK packaging news and insights - PET packaging trends, guides, and industry knowledge."
+>
+  <div class="breadcrumb"><div class="container"><a href="/">Home</a><span class="separator">/</span><span class="current">News & Insights</span></div></div>
+
+  <section class="page-header text-center"><div class="container"><h1>News & Insights</h1><p>Industry trends, packaging guides, and expert insights from the CHINPK team.</p></div></section>
+
+  <section class="py-20"><div class="container max-w-6xl">
+    <div class="flex flex-wrap justify-center gap-3 mb-10 reveal" id="category-filter"><button type="button" class="tab-btn active" data-filter="all">All Articles</button></div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid"></div>
+    <div id="news-loading" class="text-center py-16"><i class="fas fa-spinner fa-spin text-3xl" style="color:var(--color-primary)"></i><p class="text-gray-600 mt-4">Loading articles...</p></div>
+  </div></section>
+
+  <section class="py-20 bg-[#f0f7f3] reveal">
+    <div class="container max-w-2xl text-center">
+      <i class="fas fa-envelope-open-text text-4xl mb-4" style="color:var(--color-primary)"></i>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">Stay Updated</h2>
+      <p class="text-gray-600 mb-8">Get the latest packaging industry insights delivered to your inbox.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" id="news-newsletter-form">
+        <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 border border-gray-300 rounded-md outline-none focus:shadow-[0_0_0_2px_rgba(22,101,52,1)]" required />
+        <button type="submit" class="text-white px-6 py-3 rounded-md font-semibold transition-colors whitespace-nowrap" style="background:var(--color-primary)">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  var ARTICLES = {JSON.stringify(newsData)};
+  (function() {
+  // Use DOMContentLoaded + function wrapper for SSR safety
+  if (typeof document === 'undefined') return;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var grid = document.getElementById('articles-grid');
+    var loading = document.getElementById('news-loading');
+    var filterDiv = document.getElementById('category-filter');
+
+    if (!grid || !ARTICLES) return;
+
+    // Get unique categories
+    var categories = [];
+    ARTICLES.forEach(function(a) { if (categories.indexOf(a.category) === -1) categories.push(a.category); });
+
+    // Build category filter
+    categories.forEach(function(cat) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'tab-btn';
+      btn.setAttribute('data-filter', cat);
+      btn.textContent = cat;
+      filterDiv.appendChild(btn);
+    });
+
+    function renderArticles(filter) {
+      var filtered = filter === 'all' ? ARTICLES : ARTICLES.filter(function(a) { return a.category === filter; });
+      grid.innerHTML = filtered.map(function(a) {
+        return `<article class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 card-hover">
+          <img src="${a.image}" alt="${a.imageAlt || a.title}" class="w-full h-48 object-cover" loading="lazy" decoding="async" />
+          <div class="p-6">
+            <span class="badge badge-green text-xs">${a.category}</span>
+            <h3 class="text-lg font-bold text-gray-900 mt-3 mb-2">${a.title}</h3>
+            <p class="text-gray-600 text-sm mb-4">${a.summary}</p>
+            <div class="flex items-center justify-between text-xs text-gray-400">
+              <span><i class="far fa-calendar-alt mr-1"></i>${a.date}</span>
+              <span><i class="far fa-clock mr-1"></i>${a.readTime}</span>
+            </div>
+            <a href="/news-detail?id=${a.id}" class="inline-flex items-center gap-1 mt-4 font-semibold text-sm hover:underline" style="color:var(--color-primary)">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div></article>`;
+      }).join('');
+      loading.style.display = 'none';
+    }
+
+    renderArticles('all');
+
+    // Filter click
+    document.querySelectorAll('#category-filter .tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#category-filter .tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        var filter = this.getAttribute('data-filter');
+        renderArticles(filter);
+      });
+    });
+  });
+})();
+</script>

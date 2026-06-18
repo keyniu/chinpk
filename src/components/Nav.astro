@@ -1,0 +1,66 @@
+---
+// Nav.astro - Main navigation bar
+const currentPath = Astro.url.pathname;
+function isActive(path: string) {
+  return currentPath === path ? 'active' : '';
+}
+---
+
+<nav class="nav-bar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <div class="nav-inner">
+      <div class="flex items-center">
+        <a href="/" class="nav-logo">CHINPK</a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="nav-links">
+        <a href="/" class={isActive('/')}>Home</a>
+        <div class="nav-item-has-dropdown">
+          <a href="/products">Products <i class="fas fa-chevron-down arrow"></i></a>
+          <div class="nav-dropdown">
+            <a href="/products#tab-cans">PET Plastic Cans</a>
+            <a href="/products#tab-jars">Plastic Jars</a>
+            <a href="/products#tab-bottles">Plastic Bottles</a>
+            <a href="/products#tab-caps">Caps &amp; Closures</a>
+            <a href="/products#tab-machinery">Packaging Machinery</a>
+            <a href="/products">View All Products</a>
+          </div>
+        </div>
+        <a href="/solutions">Solutions</a>
+        <a href="/news">News</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button id="search-btn" class="nav-phone" aria-label="Search products">
+          <i class="fas fa-search"></i>
+        </button>
+        <a href="tel:+8615939482575" class="nav-phone">
+          <i class="fas fa-phone mr-2"></i>+86 159 3948 2575
+        </a>
+        <a href="/contact" class="nav-cta">Get Quote</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" type="button" class="mobile-menu-btn">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/news">News</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="mobile-menu-cta">Get Quote</a>
+    </div>
+  </div>
+</nav>

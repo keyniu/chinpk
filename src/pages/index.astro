@@ -1,0 +1,393 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="CHINPK | FDA-Compliant PET Plastic Packaging Manufacturer | 17+ Years China Factory"
+  description="CHINPK | FDA-Compliant PET Plastic Packaging Manufacturer in China. 17+ years, 500+ global clients, ISO 9001 & FDA certified factory. Free samples available."
+>
+  <!-- Hero -->
+  <section class="relative min-h-[600px] flex items-center" id="hero">
+    <div class="hero-carousel">
+      <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&h=800&fit=crop" alt="PET Plastic Packaging Factory" width="1920" height="800" fetchpriority="high" />
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=800&fit=crop" alt="Plastic Manufacturing Factory" width="1920" height="800" loading="lazy" decoding="async" />
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1920&h=800&fit=crop" alt="Packaging Products Showcase" width="1920" height="800" loading="lazy" decoding="async" />
+      </div>
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div class="max-w-3xl">
+        <p class="text-sm text-green-300 font-semibold tracking-wide uppercase mb-4">China Manufacturing, Western Quality Standards</p>
+        <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">Your Trusted FDA-Compliant PET Packaging Partner from China</h1>
+        <p class="text-xl text-gray-300 mb-4 leading-relaxed">Since 2007, we've been serving 500+ brands in 50+ countries from our 30,000sqm factory with 36 fully automated machines. ISO 9001, FSSC 22000, FDA certified. 48-hour samples available.</p>
+        <p class="text-base text-green-200 mb-8"><i class="fas fa-check-circle mr-2"></i>99.8% quality pass rate &mdash; daily output of 2 million units</p>
+        <div class="bg-white rounded-lg p-2 shadow-2xl max-w-xl">
+          <div class="flex flex-col md:flex-row gap-2">
+            <select id="hero-product-select" class="flex-1 px-4 py-3 border border-gray-200 rounded-md text-gray-700 outline-none focus:shadow-[0_0_0_2px_rgba(22,101,52,1)]" aria-label="Select product type">
+              <option value="">Select Product Type</option>
+              <option value="cans">PET Plastic Cans</option>
+              <option value="jars">Plastic Jars</option>
+              <option value="bottles">Plastic Bottles</option>
+              <option value="cups">Plastic Cups</option>
+              <option value="custom">Custom Packaging</option>
+            </select>
+            <a href="/contact" class="bg-[#166534] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1F8143] transition-colors text-center whitespace-nowrap" id="hero-cta-btn">Get Instant Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="trust-badges-bar" aria-label="Our guarantees">
+    <div class="container">
+      <div class="trust-badges-inner">
+        <div class="trust-badge"><i class="fas fa-box-open"></i><div><strong>Free Samples</strong><span>Test before bulk order</span></div></div>
+        <div class="trust-badge"><i class="fas fa-industry"></i><div><strong>OEM/ODM</strong><span>Full customization</span></div></div>
+        <div class="trust-badge"><i class="fas fa-shield-alt"></i><div><strong>Quality Guarantee</strong><span>100% food grade</span></div></div>
+        <div class="trust-badge"><i class="fas fa-truck"></i><div><strong>Fast Shipping</strong><span>15-30 days delivery</span></div></div>
+        <div class="trust-badge"><i class="fas fa-headset"></i><div><strong>24/7 Support</strong><span>Response within 2h</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factory Strength -->
+  <section class="py-20 bg-white" id="factory-strength">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="text-sm font-semibold tracking-wide uppercase mb-2" style="color:var(--color-primary)">Real Factory, Real Capacity</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">30,000sqm Automated Manufacturing Facility</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">36 fully automated machines, 100,000-class clean room, daily output of 2 million units. Welcome to visit us in Guangzhou anytime.</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div class="reveal-left">
+          <div class="rounded-lg overflow-hidden shadow-lg relative" style="aspect-ratio:4/3">
+            <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=600&fit=crop" alt="CHINPK Factory" class="w-full h-full object-cover" width="800" height="600" loading="lazy" decoding="async" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <p class="text-white font-semibold"><i class="fas fa-map-marker-alt mr-2"></i>Guangzhou, Guangdong, China</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-3 mt-3">
+            <div class="rounded overflow-hidden" style="aspect-ratio:1"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=200&h=200&fit=crop" alt="Production line" class="w-full h-full object-cover" width="200" height="200" loading="lazy" decoding="async" /></div>
+            <div class="rounded overflow-hidden" style="aspect-ratio:1"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=200&h=200&fit=crop" alt="Quality inspection lab" class="w-full h-full object-cover" width="200" height="200" loading="lazy" decoding="async" /></div>
+            <div class="rounded overflow-hidden" style="aspect-ratio:1"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=200&h=200&fit=crop" alt="Warehouse" class="w-full h-full object-cover" width="200" height="200" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="bg-gray-50 rounded-lg p-6 text-center border border-gray-100"><div class="text-3xl font-bold mb-1" style="color:var(--color-primary)">30,000sqm</div><p class="text-gray-600 text-sm font-medium">Modern Factory</p></div>
+            <div class="bg-gray-50 rounded-lg p-6 text-center border border-gray-100"><div class="text-3xl font-bold mb-1" style="color:var(--color-primary)">36</div><p class="text-gray-600 text-sm font-medium">Fully Automated Machines</p></div>
+            <div class="bg-gray-50 rounded-lg p-6 text-center border border-gray-100"><div class="text-3xl font-bold mb-1" style="color:var(--color-primary)">2M+</div><p class="text-gray-600 text-sm font-medium">Daily Output (units)</p></div>
+            <div class="bg-gray-50 rounded-lg p-6 text-center border border-gray-100"><div class="text-3xl font-bold mb-1" style="color:var(--color-primary)">99.8%</div><p class="text-gray-600 text-sm font-medium">Quality Pass Rate</p></div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3"><i class="fas fa-check-circle mt-1" style="color:var(--color-primary)"></i><div><p class="font-semibold text-gray-900">14 Injection + 14 Blow Molding Machines</p><p class="text-gray-600 text-sm">Flexible production modes for stable output</p></div></div>
+            <div class="flex items-start gap-3"><i class="fas fa-check-circle mt-1" style="color:var(--color-primary)"></i><div><p class="font-semibold text-gray-900">100,000-Class Clean Room</p><p class="text-gray-600 text-sm">Dust-free workshop for food & pharmaceutical grade packaging</p></div></div>
+            <div class="flex items-start gap-3"><i class="fas fa-check-circle mt-1" style="color:var(--color-primary)"></i><div><p class="font-semibold text-gray-900">CRCCHEM Premium PET Resin</p><p class="text-gray-600 text-sm">100% virgin PET, FDA/EU compliant</p></div></div>
+            <div class="flex items-start gap-3"><i class="fas fa-check-circle mt-1" style="color:var(--color-primary)"></i><div><p class="font-semibold text-gray-900">Full 4-Stage QC System</p><p class="text-gray-600 text-sm">IQC, IPQC, FQC, OQC — 20+ tests per batch</p></div></div>
+          </div>
+          <a href="/about" class="inline-flex items-center gap-2 mt-6 font-semibold hover:underline" style="color:var(--color-primary)">Take a Virtual Factory Tour <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logo Wall -->
+  <section class="py-16 bg-gray-50 border-y border-gray-100" id="trusted-by">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wide mb-8 reveal">Trusted by Leading Brands Worldwide</p>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60 reveal">
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">Nestle</div>
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">Unilever</div>
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">L'Oreal</div>
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">P&G</div>
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">Johnson&Johnson</div>
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">Danone</div>
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">Reckitt</div>
+        <div class="text-2xl font-bold text-gray-400 tracking-tight">Henkel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-20 reveal" style="background:var(--color-primary);color:white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">Why 500+ Brands Choose CHINPK</h2>
+        <p class="text-green-200 max-w-2xl mx-auto">Verified supplier with comprehensive certifications and <span class="font-bold">99.8% quality pass rate</span>.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center mb-12">
+        <div class="reveal-scale delay-2"><div class="stat-number text-white">36</div><p class="text-gray-300 text-sm">Automated Machines</p></div>
+        <div class="reveal-scale delay-4"><div class="stat-number text-white">99.8%</div><p class="text-gray-300 text-sm">Quality Pass Rate</p></div>
+        <div class="reveal-scale delay-6"><div class="stat-number text-white">48h</div><p class="text-gray-300 text-sm">Sample Delivery</p></div>
+        <div class="reveal-scale delay-8"><div class="stat-number text-white">2M+</div><p class="text-gray-300 text-sm">Daily Output</p></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <article class="text-center reveal delay-2">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-industry text-xl" style="color:var(--color-primary)"></i></div>
+          <h3 class="text-lg font-bold text-white mb-2">17+ Years Experience</h3>
+          <p class="text-green-100 text-sm">36 fully automated machines with flexible production modes. CRCCHEM premium PET resin.</p>
+        </article>
+        <article class="text-center reveal delay-4">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-certificate text-xl" style="color:var(--color-primary)"></i></div>
+          <h3 class="text-lg font-bold text-white mb-2">Full Certifications</h3>
+          <p class="text-green-100 text-sm">ISO 9001, FSSC 22000, BRCGS, FDA, EU 10/2011, SGS, REACH & RoHS certified.</p>
+        </article>
+        <article class="text-center reveal delay-6">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-bolt text-xl" style="color:var(--color-primary)"></i></div>
+          <h3 class="text-lg font-bold text-white mb-2">48-Hour Samples</h3>
+          <p class="text-green-100 text-sm">Simple custom samples in 48 hours, bulk orders in 3-5 days.</p>
+        </article>
+        <article class="text-center reveal delay-8">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-shipping-fast text-xl" style="color:var(--color-primary)"></i></div>
+          <h3 class="text-lg font-bold text-white mb-2">Global Delivery</h3>
+          <p class="text-green-100 text-sm">Sea, air, and express shipping via trusted global partners.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Preview -->
+  <section class="py-20 bg-[#f0f7f3]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Product Categories</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Complete range of FDA-compliant PET plastic packaging. <a href="/solutions" class="font-semibold hover:underline" style="color:var(--color-primary)">Browse by industry &rarr;</a></p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="bg-white rounded-lg overflow-hidden shadow-sm card-hover reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1608178398319-48f814d0750c?w=600&h=400&fit=crop" alt="PET Plastic Cans" class="w-full h-56 object-cover" width="600" height="400" loading="lazy" decoding="async" data-fallback="PET Plastic Cans" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">PET Plastic Cans</h3>
+            <p class="text-gray-600 mb-4 text-sm">Food grade transparent PET cans for nuts, candies, snacks and dry food storage.</p>
+            <div class="space-y-2 mb-4 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Material</span><span class="font-medium text-gray-900">Food Grade PET</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">MOQ</span><span class="font-medium text-gray-900">2,000 pcs</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Lead Time</span><span class="font-medium text-gray-900">15-25 days</span></div>
+            </div>
+            <a href="/products#tab-cans" class="font-semibold hover:underline text-sm" style="color:var(--color-primary)">View Products &rarr;</a>
+          </div>
+        </article>
+        <article class="bg-white rounded-lg overflow-hidden shadow-sm card-hover reveal delay-4">
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=400&fit=crop" alt="Cosmetic Plastic Jars" class="w-full h-56 object-cover" width="600" height="400" loading="lazy" decoding="async" data-fallback="Plastic Jars" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Plastic Jars</h3>
+            <p class="text-gray-600 mb-4 text-sm">Premium clear and amber PET jars for cosmetics, creams, pharmaceuticals and health supplements.</p>
+            <div class="space-y-2 mb-4 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Material</span><span class="font-medium text-gray-900">PET / PP</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">MOQ</span><span class="font-medium text-gray-900">3,000 pcs</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Lead Time</span><span class="font-medium text-gray-900">15-25 days</span></div>
+            </div>
+            <a href="/products#tab-jars" class="font-semibold hover:underline text-sm" style="color:var(--color-primary)">View Products &rarr;</a>
+          </div>
+        </article>
+        <article class="bg-white rounded-lg overflow-hidden shadow-sm card-hover reveal delay-6">
+          <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&h=400&fit=crop" alt="Plastic Bottles" class="w-full h-56 object-cover" width="600" height="400" loading="lazy" decoding="async" data-fallback="Plastic Bottles" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Plastic Bottles</h3>
+            <p class="text-gray-600 mb-4 text-sm">HDPE and PET bottles for beverages, personal care, household cleaners and pharmaceutical applications.</p>
+            <div class="space-y-2 mb-4 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Material</span><span class="font-medium text-gray-900">PET / HDPE</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">MOQ</span><span class="font-medium text-gray-900">5,000 pcs</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Lead Time</span><span class="font-medium text-gray-900">15-25 days</span></div>
+            </div>
+            <a href="/products#bottles" class="font-semibold hover:underline text-sm" style="color:var(--color-primary)">View Products &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customization -->
+  <section class="py-20 bg-white" id="customization">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="text-sm font-semibold tracking-wide uppercase mb-2" style="color:var(--color-primary)">Full OEM/ODM Service</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Custom Packaging Made Easy</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">From concept to finished product — our in-house team handles everything.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-100 card-hover reveal delay-2">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:var(--bg-light)"><i class="fas fa-drafting-compass text-lg" style="color:var(--color-primary)"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Mold Development</h3>
+          <p class="text-gray-600 text-sm mb-2">Custom mold design and fabrication in-house</p>
+          <p class="text-xs font-medium" style="color:var(--color-primary)"><i class="fas fa-clock mr-1"></i>7-10 days turnaround</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-100 card-hover reveal delay-4">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:var(--bg-light)"><i class="fas fa-palette text-lg" style="color:var(--color-primary)"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Color Matching</h3>
+          <p class="text-gray-600 text-sm mb-2">Pantone color matching with masterbatch</p>
+          <p class="text-xs font-medium" style="color:var(--color-primary)"><i class="fas fa-check mr-1"></i>1000+ color options</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-100 card-hover reveal delay-6">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:var(--bg-light)"><i class="fas fa-print text-lg" style="color:var(--color-primary)"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Printing & Labeling</h3>
+          <p class="text-gray-600 text-sm mb-2">Silk screen, hot stamping, shrink sleeve</p>
+          <p class="text-xs font-medium" style="color:var(--color-primary)"><i class="fas fa-check mr-1"></i>Multi-color options</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-100 card-hover reveal delay-8">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:var(--bg-light)"><i class="fas fa-box text-lg" style="color:var(--color-primary)"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Custom Packaging</h3>
+          <p class="text-gray-600 text-sm mb-2">Retail-ready packaging, display boxes</p>
+          <p class="text-xs font-medium" style="color:var(--color-primary)"><i class="fas fa-check mr-1"></i>Full service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="py-20 bg-[#f0f7f3]" id="process">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">How We Work With You</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">A transparent 5-step process to ensure smooth collaboration from inquiry to delivery.</p>
+      </div>
+      <div class="grid md:grid-cols-5 gap-6">
+        <div class="process-step reveal delay-2"><div class="step-number">1</div><div class="step-icon"><i class="fas fa-comments"></i></div><h3>Inquiry & Consultation</h3><p>Share your requirements and get expert advice within 2 hours.</p></div>
+        <div class="process-step reveal delay-4"><div class="step-number">2</div><div class="step-icon"><i class="fas fa-file-invoice"></i></div><h3>Quote & Sample</h3><p>Receive a detailed quote and free samples for quality check.</p></div>
+        <div class="process-step reveal delay-6"><div class="step-number">3</div><div class="step-icon"><i class="fas fa-handshake"></i></div><h3>Order Confirmation</h3><p>Confirm design, specs and payment terms.</p></div>
+        <div class="process-step reveal delay-8"><div class="step-number">4</div><div class="step-icon"><i class="fas fa-cogs"></i></div><h3>Production & QC</h3><p>4-stage quality control with 20+ tests per batch.</p></div>
+        <div class="process-step reveal delay-10"><div class="step-number">5</div><div class="step-icon"><i class="fas fa-shipping-fast"></i></div><h3>Fast Delivery</h3><p>Shipped worldwide via sea, air, or express.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production & QC -->
+  <section class="py-20 bg-white" id="production-qc">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal"><h2 class="text-3xl font-bold text-gray-900 mb-4">Our Production & Quality Control</h2></div>
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="reveal-left">
+          <h3 class="text-xl font-bold text-gray-900 mb-6"><i class="fas fa-industry mr-2" style="color:var(--color-primary)"></i>Production Process</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start"><div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold" style="background:var(--color-primary)">1</div><div><p class="font-semibold text-gray-900">Raw Material Inspection (IQC)</p><p class="text-gray-600 text-sm">All PET/HDPE resin tested for food-grade compliance.</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold" style="background:var(--color-primary)">2</div><div><p class="font-semibold text-gray-900">In-Process Quality Control (IPQC)</p><p class="text-gray-600 text-sm">Real-time monitoring of temperature, pressure, and dimensions.</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold" style="background:var(--color-primary)">3</div><div><p class="font-semibold text-gray-900">Final Quality Control (FQC)</p><p class="text-gray-600 text-sm">100% visual inspection + AQL sampling.</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold" style="background:var(--color-primary)">4</div><div><p class="font-semibold text-gray-900">Outgoing Quality Assurance (OQC)</p><p class="text-gray-600 text-sm">Final check before shipment.</p></div></div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <h3 class="text-xl font-bold text-gray-900 mb-6"><i class="fas fa-microscope mr-2" style="color:var(--color-primary)"></i>Testing & Lab Equipment</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100"><i class="fas fa-ruler-combined mb-2" style="color:var(--color-primary)"></i><p class="font-semibold text-gray-900 text-sm">Dimension Testing</p><p class="text-gray-500 text-xs">&plusmn;0.1mm precision</p></div>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100"><i class="fas fa-weight-hanging mb-2" style="color:var(--color-primary)"></i><p class="font-semibold text-gray-900 text-sm">Drop Test</p><p class="text-gray-500 text-xs">1.2m free fall standard</p></div>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100"><i class="fas fa-compress-arrows-alt mb-2" style="color:var(--color-primary)"></i><p class="font-semibold text-gray-900 text-sm">Seal Test</p><p class="text-gray-500 text-xs">Vacuum & pressure leak test</p></div>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100"><i class="fas fa-flask mb-2" style="color:var(--color-primary)"></i><p class="font-semibold text-gray-900 text-sm">Food-Grade Analysis</p><p class="text-gray-500 text-xs">Migration & heavy metal test</p></div>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100"><i class="fas fa-thermometer-half mb-2" style="color:var(--color-primary)"></i><p class="font-semibold text-gray-900 text-sm">Temperature Test</p><p class="text-gray-500 text-xs">-20degC to 120degC range</p></div>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100"><i class="fas fa-tachometer-alt mb-2" style="color:var(--color-primary)"></i><p class="font-semibold text-gray-900 text-sm">Wall Thickness</p><p class="text-gray-500 text-xs">Ultrasonic measurement</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Support -->
+  <section class="py-20 bg-[#f0f7f3]" id="business-support">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal"><h2 class="text-3xl font-bold text-gray-900 mb-4">Complete Business Support</h2></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 card-hover reveal delay-2">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:var(--bg-light)"><i class="fas fa-ship text-lg" style="color:var(--color-primary)"></i></div>
+          <h3 class="font-bold text-gray-900 mb-3">Shipping Guide</h3>
+          <div class="space-y-2 text-sm text-gray-600"><div class="flex justify-between"><span>Sea Freight</span><span class="font-medium text-gray-900">25-35 days</span></div><div class="flex justify-between"><span>Air Freight</span><span class="font-medium text-gray-900">5-7 days</span></div><div class="flex justify-between"><span>Express</span><span class="font-medium text-gray-900">3-5 days</span></div></div>
+        </div>
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 card-hover reveal delay-4">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:var(--bg-light)"><i class="fas fa-file-contract text-lg" style="color:var(--color-primary)"></i></div>
+          <h3 class="font-bold text-gray-900 mb-3">Trade Terms & Payment</h3>
+          <div class="space-y-2 text-sm text-gray-600"><div class="flex items-center gap-2"><i class="fas fa-check text-xs" style="color:var(--color-primary)"></i><span>FOB Guangzhou / CIF / EXW</span></div><div class="flex items-center gap-2"><i class="fas fa-check text-xs" style="color:var(--color-primary)"></i><span>T/T, L/C, PayPal</span></div><div class="flex items-center gap-2"><i class="fas fa-check text-xs" style="color:var(--color-primary)"></i><span>30% deposit + 70% before shipment</span></div></div>
+        </div>
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 card-hover reveal delay-6">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:var(--bg-light)"><i class="fas fa-headset text-lg" style="color:var(--color-primary)"></i></div>
+          <h3 class="font-bold text-gray-900 mb-3">After-Sales Service</h3>
+          <div class="space-y-2 text-sm text-gray-600"><div class="flex items-center gap-2"><i class="fas fa-check text-xs" style="color:var(--color-primary)"></i><span>7-day quality issue response</span></div><div class="flex items-center gap-2"><i class="fas fa-check text-xs" style="color:var(--color-primary)"></i><span>Free replacement for defects</span></div><div class="flex items-center gap-2"><i class="fas fa-check text-xs" style="color:var(--color-primary)"></i><span>24/7 WhatsApp support</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-[#f0f7f3]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal"><h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="testimonial-card card-hover reveal delay-2"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>"Great quality and exactly as described. The PET cans have consistent wall thickness and the seal is perfect. Will definitely order again."</blockquote><div><p class="author">David Thompson</p><p class="company">Procurement Officer, Australia</p></div></article>
+        <article class="testimonial-card card-hover reveal delay-4"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>"Excelente calidad y diseno. The aluminum caps fit perfectly and the custom logo printing exceeded our expectations."</blockquote><div><p class="author">Antonio Garcia</p><p class="company">Import Manager, Spain</p></div></article>
+        <article class="testimonial-card card-hover reveal delay-6"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>"10/10. Fast shipping, good communication, and the product quality is consistent every time."</blockquote><div><p class="author">Erik Johansson</p><p class="company">CEO, FoodPack Sweden</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-20 reveal" style="background:var(--color-primary-dark);color:white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12"><h2 class="text-3xl font-bold text-white mb-4">Certified Quality, Global Reach</h2></div>
+      <div class="flex flex-wrap justify-center items-center gap-10 mb-12">
+        <div class="text-center"><i class="fas fa-shield-alt text-4xl text-green-400 mb-2"></i><p class="font-semibold text-white text-sm">ISO 9001:2015</p></div>
+        <div class="text-center"><i class="fas fa-check-circle text-4xl text-green-400 mb-2"></i><p class="font-semibold text-white text-sm">FDA Approved</p></div>
+        <div class="text-center"><i class="fas fa-award text-4xl text-green-400 mb-2"></i><p class="font-semibold text-white text-sm">FSSC 22000</p></div>
+        <div class="text-center"><i class="fas fa-certificate text-4xl text-green-400 mb-2"></i><p class="font-semibold text-white text-sm">BRCGS</p></div>
+        <div class="text-center"><i class="fas fa-globe-americas text-4xl text-green-400 mb-2"></i><p class="font-semibold text-white text-sm">EU 10/2011</p></div>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="text-center"><div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="fas fa-utensils text-xl text-green-200"></i></div><p class="text-white font-semibold text-sm">Food & Beverage</p><p class="text-green-300 text-xs">200+ Clients</p></div>
+        <div class="text-center"><div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="fas fa-pump-soap text-xl text-green-200"></i></div><p class="text-white font-semibold text-sm">Cosmetics</p><p class="text-green-300 text-xs">150+ Clients</p></div>
+        <div class="text-center"><div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="fas fa-pills text-xl text-green-200"></i></div><p class="text-white font-semibold text-sm">Pharmaceutical</p><p class="text-green-300 text-xs">80+ Clients</p></div>
+        <div class="text-center"><div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="fas fa-home text-xl text-green-200"></i></div><p class="text-white font-semibold text-sm">Household</p><p class="text-green-300 text-xs">70+ Clients</p></div>
+        <div class="text-center"><div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="fas fa-globe-americas text-xl text-green-200"></i></div><p class="text-white font-semibold text-sm">50+ Countries</p><p class="text-green-300 text-xs">Global Reach</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Catalog -->
+  <section class="py-20 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">Download Resources</h2></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <div class="p-8 text-center bg-[#f0f7f3]"><i class="fas fa-file-pdf text-5xl mb-4" style="color:var(--color-primary)"></i><h4 class="font-bold text-gray-900 mb-2">Product Catalog 2026</h4><p class="text-gray-500 text-sm">Complete range with specs, 45 pages</p></div>
+          <div class="p-4 bg-white border-t border-gray-200"><a href="/contact?download=catalog" class="block w-full bg-[#166534] text-white text-center py-3 rounded-md font-semibold hover:bg-[#1F8143] transition-colors"><i class="fas fa-download mr-2"></i>Download PDF</a></div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <div class="p-8 text-center bg-[#f0f7f3]"><i class="fas fa-file-alt text-5xl mb-4" style="color:var(--color-primary)"></i><h4 class="font-bold text-gray-900 mb-2">Price List 2026</h4><p class="text-gray-500 text-sm">Standard products pricing & MOQ</p></div>
+          <div class="p-4 bg-white border-t border-gray-200"><a href="/contact?download=pricelist" class="block w-full bg-[#166534] text-white text-center py-3 rounded-md font-semibold hover:bg-[#1F8143] transition-colors"><i class="fas fa-envelope mr-2"></i>Request Price List</a></div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <div class="p-8 text-center bg-[#f0f7f3]"><i class="fas fa-certificate text-5xl mb-4" style="color:var(--color-primary)"></i><h4 class="font-bold text-gray-900 mb-2">Certifications</h4><p class="text-gray-500 text-sm">ISO 9001, FDA, SGS certificates</p></div>
+          <div class="p-4 bg-white border-t border-gray-200"><a href="/contact?download=certs" class="block w-full bg-[#166534] text-white text-center py-3 rounded-md font-semibold hover:bg-[#1F8143] transition-colors"><i class="fas fa-download mr-2"></i>Download</a></div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <div class="p-8 text-center bg-[#f0f7f3]"><i class="fas fa-clipboard-check text-5xl mb-4" style="color:var(--color-primary)"></i><h4 class="font-bold text-gray-900 mb-2">Material Test Report</h4><p class="text-gray-500 text-sm">Food-grade compliance data</p></div>
+          <div class="p-4 bg-white border-t border-gray-200"><a href="/contact?download=mtr" class="block w-full bg-[#166534] text-white text-center py-3 rounded-md font-semibold hover:bg-[#1F8143] transition-colors"><i class="fas fa-download mr-2"></i>Download</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-[#f0f7f3]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal"><h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2></div>
+      <div class="faq-list reveal">
+        <div class="faq-item"><button class="faq-question" type="button">What is the minimum order quantity (MOQ)?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Our standard MOQ ranges from 2,000 to 20,000 pieces. For stock items, MOQ can be as low as 1,000 pcs.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">What is the typical lead time?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Standard products: 15-25 business days. Custom/OEM: 25-35 days. Sample delivery: 3-5 business days.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Can I get free samples?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Yes! Free samples for quality verification — you only pay for shipping.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">What payment methods do you accept?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>T/T, L/C, PayPal, Western Union. Standard terms: 30% deposit + 70% before shipment.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Do you offer custom packaging?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Yes! Full OEM/ODM including custom mold design, private labeling, silk screen printing, hot stamping, and custom color matching.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 reveal" style="background:var(--color-primary)">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Source FDA-Compliant Packaging from China?</h2>
+      <p class="text-green-100 text-lg mb-6">Join 500+ brands who trust CHINPK for quality, compliance, and fast delivery.</p>
+      <a href="/contact" class="inline-block bg-white px-10 py-4 rounded-md font-semibold hover:bg-gray-100 transition-colors text-lg" style="color:var(--color-primary)">Get Your Free Quote Now</a>
+    </div>
+  </section>
+</BaseLayout>

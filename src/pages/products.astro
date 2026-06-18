@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import productsData from '../data/products-data.js';
+---
+
+<BaseLayout
+  title="Our Products | CHINPK - PET Plastic Cans, Jars & Bottles"
+  description="CHINPK products - PET plastic cans, jars, bottles for food, cosmetic, pharmaceutical packaging."
+>
+  <div class="breadcrumb"><div class="container"><a href="/">Home</a><span class="separator">/</span><span class="current">Products</span></div></div>
+
+  <section class="page-header text-center"><div class="container"><h1>Our Products</h1><p>Complete range of premium PET plastic packaging solutions.</p></div></section>
+
+  <section class="py-20"><div class="container">
+    <div class="text-center mb-8 reveal"><h2 class="text-3xl font-bold text-gray-900 mb-4">Browse Our Products</h2></div>
+    <div class="product-layout">
+      <aside class="product-sidebar reveal">
+        <div class="sidebar-categories">
+          <h3 class="sidebar-title">Product Categories</h3>
+          <button type="button" class="sidebar-btn active" data-tab="tab-all"><i class="fas fa-th-large"></i> All Products<span class="count" id="count-all">181</span></button>
+          <button type="button" class="sidebar-btn" data-tab="tab-cans"><i class="fas fa-canadian-maple-leaf"></i> Plastic Cans<span class="count" id="count-cans">69</span></button>
+          <button type="button" class="sidebar-btn" data-tab="tab-jars"><i class="fas fa-jar"></i> Plastic Jars<span class="count" id="count-jars">21</span></button>
+          <button type="button" class="sidebar-btn" data-tab="tab-bottles"><i class="fas fa-wine-bottle"></i> Plastic Bottles<span class="count" id="count-bottles">12</span></button>
+          <button type="button" class="sidebar-btn" data-tab="tab-caps"><i class="fas fa-circle"></i> Caps &amp; Closures<span class="count" id="count-caps">39</span></button>
+          <button type="button" class="sidebar-btn" data-tab="tab-machinery"><i class="fas fa-cogs"></i> Packaging Machinery<span class="count" id="count-machinery">25</span></button>
+          <button type="button" class="sidebar-btn" data-tab="tab-cups"><i class="fas fa-glass-cheers"></i> Plastic Cups<span class="count" id="count-cups">6</span></button>
+          <button type="button" class="sidebar-btn" data-tab="tab-straws"><i class="fas fa-arrows-alt-h"></i> Straws<span class="count" id="count-straws">9</span></button>
+        </div>
+        <div class="sidebar-filter">
+          <input type="text" class="filter-search" id="product-search" placeholder="Search products..." aria-label="Search products" />
+          <select class="filter-sort" id="product-sort" aria-label="Sort">
+            <option value="default">Sort by</option>
+            <option value="name-asc">Name A-Z</option>
+            <option value="name-desc">Name Z-A</option>
+            <option value="capacity-asc">Capacity Low-High</option>
+            <option value="capacity-desc">Capacity High-Low</option>
+          </select>
+        </div>
+        <div class="sidebar-cta"><a href="/contact" class="btn-primary w-full text-center"><i class="fas fa-file-invoice mr-2"></i>Request a Quote</a></div>
+      </aside>
+
+      <main class="product-main">
+        <div id="tab-all" class="tab-content active"><div class="product-header"><h3 class="product-header-title">All Products</h3><span class="filter-count" id="product-count">181 products</span></div><div class="grid-3" id="grid-all"></div></div>
+        <div id="tab-cans" class="tab-content"><div class="product-header"><h3 class="product-header-title">Plastic Cans</h3><span class="filter-count">3 products</span></div><div class="grid-3" id="grid-cans"></div></div>
+        <div id="tab-jars" class="tab-content"><div class="product-header"><h3 class="product-header-title">Plastic Jars</h3><span class="filter-count">3 products</span></div><div class="grid-3" id="grid-jars"></div></div>
+        <div id="tab-bottles" class="tab-content"><div class="product-header"><h3 class="product-header-title">Plastic Bottles</h3><span class="filter-count">3 products</span></div><div class="grid-3" id="grid-bottles"></div></div>
+        <div id="tab-caps" class="tab-content"><div class="product-header"><h3 class="product-header-title">Caps &amp; Closures</h3><span class="filter-count">3 products</span></div><div class="grid-3" id="grid-caps"></div></div>
+        <div id="tab-machinery" class="tab-content"><div class="product-header"><h3 class="product-header-title">Packaging Machinery</h3><span class="filter-count">3 products</span></div><div class="grid-3" id="grid-machinery"></div></div>
+        <div id="tab-cups" class="tab-content"><div class="product-header"><h3 class="product-header-title">Plastic Cups</h3><span class="filter-count">3 products</span></div><div class="grid-3" id="grid-cups"></div></div>
+        <div id="tab-straws" class="tab-content"><div class="product-header"><h3 class="product-header-title">Straws</h3><span class="filter-count">2 products</span></div><div class="grid-3" id="grid-straws"></div></div>
+      </main>
+    </div>
+  </div></section>
+</BaseLayout>
+
+<script is:inline>
+  // Embed product data
+  window.PRODUCTS = {JSON.stringify(productsData)};
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var PER_PAGE = 9;
+    var currentPage = { all: 1, cans: 1, jars: 1, bottles: 1, caps: 1, machinery: 1, cups: 1, straws: 1 };
+    var gridIds = ['all', 'cans', 'jars', 'bottles', 'caps', 'machinery', 'cups', 'straws'];
+
+    function renderProductCard(p) {
+      var cap = p.specs && p.specs['Capacity'] ? p.specs['Capacity'] : '';
+      var mat = p.specs && p.specs['Material'] ? p.specs['Material'] : '';
+      var moq = p.specs && p.specs['MOQ'] ? p.specs['MOQ'] : '';
+      var badgeClass = (p.leadTime === 'In Stock' || p.leadTime === 'Fast Ship') ? 'badge-orange' : 'badge-green';
+      var badgeText = (p.leadTime === 'In Stock' || p.leadTime === 'Fast Ship') ? p.leadTime : 'Customizable';
+      return `<article class="product-card" data-product-id="${p.id}">
+        <img src="${p.image}" alt="${p.imageAlt || p.name}" class="w-full h-48 object-cover" loading="lazy" decoding="async" />
+        <div class="p-5">
+          <h4 class="product-card-title">${p.name}</h4>
+          <div class="product-card-specs">
+            ${cap ? '<p><span>' + (p.category === 'machinery' || p.category === 'caps' ? 'Type' : 'Capacity') + ':</span> ' + cap + '</p>' : ''}
+            ${mat ? '<p><span>Material:</span> ' + mat + '</p>' : ''}
+            ${moq ? '<p><span>MOQ:</span> ' + moq + '</p>' : ''}
+          </div>
+          <div class="product-card-footer">
+            <span class="badge ${badgeClass}">${badgeText}</span>
+            <a href="/product-detail?id=${p.id}" class="font-semibold hover:underline text-sm" style="color:var(--color-primary)">View Details</a>
+          </div>
+        </div></article>`;
+    }
+
+    function getPaginationHtml(current, total) {
+      if (total <= 1) return '';
+      var h = '<div class="pagination">';
+      h += '<button class="pag-btn" data-page="' + (current - 1) + '"' + (current <= 1 ? ' disabled' : '') + '><i class="fas fa-chevron-left"></i> Prev</button><div class="pag-pages">';
+      var s = Math.max(1, current - 2), e = Math.min(total, current + 2);
+      if (s > 1) h += '<span class="pag-dots">...</span>';
+      for (var i = s; i <= e; i++) h += '<button class="pag-num' + (i === current ? ' active' : '') + '" data-page="' + i + '">' + i + '</button>';
+      if (e < total) h += '<span class="pag-dots">...</span>';
+      h += '</div><button class="pag-btn" data-page="' + (current + 1) + '"' + (current >= total ? ' disabled' : '') + '>Next <i class="fas fa-chevron-right"></i></button></div>';
+      return h;
+    }
+
+    function renderGrid(gridId, products, page) {
+      var grid = document.getElementById(gridId);
+      if (!grid) return;
+      var total = Math.ceil(products.length / PER_PAGE) || 1;
+      var start = (page - 1) * PER_PAGE;
+      grid.innerHTML = products.slice(start, start + PER_PAGE).map(renderProductCard).join('') + getPaginationHtml(page, total);
+    }
+
+    // Attach pagination handlers
+    function attachPagination() {
+      document.querySelectorAll('.pag-btn, .pag-num').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          if (this.disabled) return;
+          var page = parseInt(this.getAttribute('data-page'));
+          var grid = this.closest('.grid-3'); if (!grid) return;
+          for (var g = 0; g < gridIds.length; g++) { if (grid.id === 'grid-' + gridIds[g]) { currentPage[gridIds[g]] = page; break; } }
+          renderAll();
+          window.scrollTo({ top: document.querySelector('.product-layout').offsetTop - 100, behavior: 'smooth' });
+        });
+      });
+    }
+
+    function renderAll() {
+      var activeTab = document.querySelector('.tab-content.active');
+      var activeId = activeTab ? activeTab.id.replace('tab-', '') : 'all';
+      var products = activeId === 'all' ? window.PRODUCTS : window.PRODUCTS.filter(function(p) { return p.category === activeId; });
+      renderGrid('grid-' + activeId, products, currentPage[activeId] || 1);
+      attachPagination();
+    }
+
+    var allGrid = document.getElementById('grid-all');
+    if (allGrid && window.PRODUCTS) {
+      renderAll();
+      // Pre-render hidden category grids
+      gridIds.slice(1).forEach(function(cat) {
+        var filtered = window.PRODUCTS.filter(function(p) { return p.category === cat; });
+        renderGrid('grid-' + cat, filtered, 1);
+      });
+    }
+
+    // Search & Sort
+    var searchInput = document.getElementById('product-search');
+    var sortSelect = document.getElementById('product-sort');
+    var countEl = document.getElementById('product-count');
+
+    function filterAndSort() {
+      var query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+      var sortVal = sortSelect ? sortSelect.value : 'default';
+      var activeTab = document.querySelector('.tab-content.active');
+      var activeId = activeTab ? activeTab.id.replace('tab-', '') : 'all';
+      var products = activeId === 'all' ? window.PRODUCTS.slice() : window.PRODUCTS.filter(function(p) { return p.category === activeId; });
+
+      if (query) {
+        products = products.filter(function(p) {
+          var searchText = (p.name + ' ' + (p.shortDesc || '') + ' ' + (p.categoryLabel || '') + ' ' + (p.applications || []).join(' ')).toLowerCase();
+          if (p.specs) { for (var k in p.specs) searchText += ' ' + (p.specs[k] || '').toLowerCase(); }
+          return searchText.indexOf(query) !== -1;
+        });
+      }
+
+      if (sortVal !== 'default') {
+        products.sort(function(a, b) {
+          if (sortVal === 'name-asc') return a.name.localeCompare(b.name);
+          if (sortVal === 'name-desc') return b.name.localeCompare(a.name);
+          var cA = parseInt(a.specs && a.specs['Capacity']) || 0;
+          var cB = parseInt(b.specs && b.specs['Capacity']) || 0;
+          return sortVal === 'capacity-asc' ? cA - cB : cB - cA;
+        });
+      }
+
+      if (countEl) countEl.textContent = products.length + ' product' + (products.length !== 1 ? 's' : '');
+      currentPage[activeId] = 1;
+      renderGrid('grid-' + activeId, products, 1);
+      attachPagination();
+    }
+
+    if (searchInput) searchInput.addEventListener('input', filterAndSort);
+    if (sortSelect) sortSelect.addEventListener('change', filterAndSort);
+    document.querySelectorAll('.sidebar-btn, .tab-btn').forEach(function(btn) { btn.addEventListener('click', function() { setTimeout(filterAndSort, 50); }); });
+  });
+</script>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About Us | CHINPK - Premium Plastic Packaging Manufacturer"
+  description="About CHINPK - 17+ years PET plastic packaging manufacturer. ISO 9001, FDA certified factory in Guangzhou, China."
+>
+  <div class="breadcrumb"><div class="container"><a href="/">Home</a><span class="separator">/</span><span class="current">About Us</span></div></div>
+
+  <section class="page-header text-center"><div class="container"><h1>About CHINPK</h1><p>17+ Years of Excellence in Plastic Packaging Manufacturing</p></div></section>
+
+  <section class="py-20"><div class="container"><div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal-left">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">CHINPK is the export brand of Henan Ruili Import & Export Co., Ltd., a <strong>verified trading company</strong> on Alibaba.com with a <strong>4.8/5 customer rating</strong>. Based in Guangzhou, China, we specialize in sourcing and delivering premium PET plastic packaging solutions to clients worldwide.</p>
+      <p class="text-gray-600 mb-6 leading-relaxed">With a strong team of <strong>51-100 employees</strong> and <strong>US$50M-100M annual revenue</strong>, we've successfully completed <strong>101+ transactions</strong> and maintain a <strong>98.72% response rate</strong> with <strong>≤2 hours response time</strong>. Main export markets: North America (30%), Western Europe (20%), Oceania (10%).</p>
+      <p class="text-gray-600 leading-relaxed">Our export manager <strong>Ms. Crystal Yuan</strong> and her team are ready to assist you with product selection, custom packaging solutions, and logistics.</p>
+    </div>
+    <div class="reveal-right"><img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=600&fit=crop" alt="CHINPK Factory" class="w-full rounded-lg shadow-lg" width="800" height="600" loading="lazy" decoding="async" /></div>
+  </div></div></section>
+
+  <section class="py-20 bg-[#f0f7f3] reveal"><div class="container"><div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+    <article class="reveal-scale delay-2"><div class="stat-number">17+</div><p class="text-gray-600">Years Experience</p></article>
+    <article class="reveal-scale delay-4"><div class="stat-number">50,000</div><p class="text-gray-600">sqm Factory Area</p></article>
+    <article class="reveal-scale delay-6"><div class="stat-number">200+</div><p class="text-gray-600">Skilled Employees</p></article>
+    <article class="reveal-scale delay-8"><div class="stat-number">100M+</div><p class="text-gray-600">Annual Output</p></article>
+  </div></div></section>
+
+  <section class="py-20 reveal"><div class="max-w-4xl mx-auto container"><div class="text-center mb-16"><h2 class="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2></div>
+    <div class="relative border-l-2 border-green ml-4 space-y-12">
+      {[
+        { year: '2007', title: 'Company Founded', desc: 'CHINPK established in Guangzhou with initial focus on food packaging.' },
+        { year: '2012', title: 'ISO 9001 Certification', desc: 'Achieved ISO 9001:2008 certification and expanded to cosmetic packaging.' },
+        { year: '2015', title: 'FDA Approval', desc: 'Obtained FDA food contact certification, entered North American market.' },
+        { year: '2018', title: 'New Factory', desc: 'Moved to 50,000 sqm modern facility, installed 30+ new production lines.' },
+        { year: '2022', title: 'Global Expansion', desc: 'Exporting to 50+ countries, serving 500+ international clients.' },
+        { year: '2026', title: 'Innovation Leader', desc: 'Continuing innovation in sustainable and eco-friendly packaging solutions.' }
+      ].map(item => <article class="timeline-item"><h3 class="text-xl font-bold text-gray-900 mb-2">{item.year} - {item.title}</h3><p class="text-gray-600">{item.desc}</p></article>)}
+    </div>
+  </div></section>
+
+  <section class="py-20 bg-[#f0f7f3] reveal"><div class="container"><div class="text-center mb-12"><h2 class="text-3xl font-bold text-gray-900 mb-4">Quality Certifications</h2></div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <article class="bg-white p-8 rounded-lg text-center shadow-sm card-hover"><i class="fas fa-certificate text-5xl mb-4" style="color:var(--color-primary)"></i><h3 class="text-lg font-bold text-gray-900 mb-2">ISO 9001:2015</h3><p class="text-gray-600 text-sm">Quality Management System certification.</p></article>
+      <article class="bg-white p-8 rounded-lg text-center shadow-sm card-hover"><i class="fas fa-shield-alt text-5xl mb-4" style="color:var(--color-primary)"></i><h3 class="text-lg font-bold text-gray-900 mb-2">FDA Approved</h3><p class="text-gray-600 text-sm">FDA compliance for food contact materials.</p></article>
+      <article class="bg-white p-8 rounded-lg text-center shadow-sm card-hover"><i class="fas fa-check-circle text-5xl mb-4" style="color:var(--color-primary)"></i><h3 class="text-lg font-bold text-gray-900 mb-2">SGS Certified</h3><p class="text-gray-600 text-sm">Third-party testing and verification.</p></article>
+      <article class="bg-white p-8 rounded-lg text-center shadow-sm card-hover"><i class="fas fa-leaf text-5xl mb-4" style="color:var(--color-primary)"></i><h3 class="text-lg font-bold text-gray-900 mb-2">REACH & RoHS</h3><p class="text-gray-600 text-sm">EU environmental compliance.</p></article>
+    </div>
+  </div></section>
+
+  <section class="py-20 reveal" style="background:var(--color-primary)"><div class="container text-center"><h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Visit Our Factory</h2><p class="text-green-100 text-lg mb-10">Schedule a factory tour or video conference.</p><a href="/contact" class="inline-block bg-white px-10 py-4 rounded-md font-semibold hover:bg-gray-100 transition-colors" style="color:var(--color-primary)">Contact Us Today</a></div></section>
+</BaseLayout>

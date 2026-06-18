@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.chinpk.com/sitemap.xml
+
+# Disallow admin and utility pages
+Disallow: /admin/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /backup/

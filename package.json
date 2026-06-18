@@ -1,0 +1,21 @@
+{
+  "name": "chinpk-website",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "CHINPK Packaging - Astro + Tailwind CSS website",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "wrangler pages deploy dist --project-name=chinpk"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.4.0",
+    "@tailwindcss/vite": "^4.1.6",
+    "astro": "^5.7.10",
+    "tailwindcss": "^4.1.6"
+  },
+  "devDependencies": {
+    "wrangler": "^4.16.0"
+  }
+}

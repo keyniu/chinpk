@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0D3320">
+    <meta name="description" content="CHINPK products - PET plastic cans, jars, bottles for food, cosmetic, pharmaceutical packaging. Full range of packaging solutions.">
+    <meta name="keywords" content="PET cans, plastic jars, plastic bottles, food packaging, cosmetic packaging, wholesale packaging">
+    <meta name="author" content="CHINPK Packaging">
+    <meta name="robots" content="index, follow">
+    <title>Our Products | CHINPK - PET Plastic Cans, Jars & Bottles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="products-data.js"></script>
+    <meta property="og:title" content="Our Products | CHINPK - PET Plastic Cans, Jars &amp; Bottles">
+    <meta property="og:description" content="PET plastic cans, jars and bottles for food, cosmetic, pharmaceutical packaging. Full range of wholesale packaging solutions from China.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.chinpk.com/products.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1607006344461-04534e9f1d88?w=1200&h=630&fit=crop">
+    <link rel="canonical" href="https://www.chinpk.com/products.html">
+    <link rel="alternate" hreflang="en" href="https://www.chinpk.com/products.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.chinpk.com/products.html">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-inner">
+                <div class="flex items-center">
+                    <a href="index.html" class="nav-logo">CHINPK</a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <div class="nav-item-has-dropdown">
+                        <a href="products.html">Products <i class="fas fa-chevron-down arrow"></i></a>
+                        <div class="nav-dropdown">
+                            <a href="products.html#tab-cans">PET Plastic Cans</a>
+                            <a href="products.html#tab-jars">Plastic Jars</a>
+                            <a href="products.html#tab-bottles">Plastic Bottles</a>
+                            <a href="products.html#tab-caps">Caps &amp; Closures</a>
+                            <a href="products.html#tab-machinery">Packaging Machinery</a>
+                            <a href="products.html">View All Products</a>
+                        </div>
+                    </div>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="news.html">News</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="search-btn" class="nav-phone" aria-label="Search products">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="tel:+8615939482575" class="nav-phone">
+                        <i class="fas fa-phone mr-2"></i>+86 159 3948 2575
+                    </a>
+                    <a href="contact.html" class="nav-cta">Get Quote</a>
+                </div>
+                <button id="mobile-menu-btn" type="button" class="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-inner">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="news.html">News</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="mobile-menu-cta">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+    <div id="search-bar" class="search-bar">
+        <div class="search-inner">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="Search products by name, category, or application..." autocomplete="off">
+            <button id="search-close" type="button" class="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="search-results" class="search-results"></div>
+    </div>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Products</span>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <section class="page-header text-center">
+            <div class="container">
+                <h1>Our Products</h1>
+                <p>Complete range of premium PET plastic packaging solutions for every industry application.</p>
+            </div>
+        </section>
+
+        <!-- Product Filter Tabs -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-8 reveal">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Browse Our Products</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Click on a category below to filter products by type.</p>
+                </div>
+
+                <div class="product-layout">
+                    <!-- Left Sidebar - Categories -->
+                    <aside class="product-sidebar reveal">
+                        <div class="sidebar-categories">
+                            <h3 class="sidebar-title">Product Categories</h3>
+                            <button type="button" class="sidebar-btn active" data-tab="tab-all">
+                                <i class="fas fa-th-large"></i> All Products
+                                <span class="count">181</span>
+                            </button>
+                            <button type="button" class="sidebar-btn" data-tab="tab-cans">
+                                <i class="fas fa-canadian-maple-leaf"></i> Plastic Cans
+                                <span class="count">69</span>
+                            </button>
+                            <button type="button" class="sidebar-btn" data-tab="tab-jars">
+                                <i class="fas fa-jar"></i> Plastic Jars
+                                <span class="count">21</span>
+                            </button>
+                            <button type="button" class="sidebar-btn" data-tab="tab-bottles">
+                                <i class="fas fa-wine-bottle"></i> Plastic Bottles
+                                <span class="count">12</span>
+                            </button>
+                            <button type="button" class="sidebar-btn" data-tab="tab-caps">
+                                <i class="fas fa-circle"></i> Caps &amp; Closures
+                                <span class="count">39</span>
+                            </button>
+                            <button type="button" class="sidebar-btn" data-tab="tab-machinery">
+                                <i class="fas fa-cogs"></i> Packaging Machinery
+                                <span class="count">25</span>
+                            </button>
+                            <button type="button" class="sidebar-btn" data-tab="tab-cups">
+                                <i class="fas fa-glass-cheers"></i> Plastic Cups
+                                <span class="count">6</span>
+                            </button>
+                            <button type="button" class="sidebar-btn" data-tab="tab-straws">
+                                <i class="fas fa-arrows-alt-h"></i> Straws
+                                <span class="count">9</span>
+                            </button>
+                        </div>
+                        <div class="sidebar-filter">
+                            <input type="text" class="filter-search" id="product-search" placeholder="Search products..." aria-label="Search products">
+                            <select class="filter-sort" id="product-sort" aria-label="Sort products">
+                                <option value="default">Sort by</option>
+                                <option value="name-asc">Name A-Z</option>
+                                <option value="name-desc">Name Z-A</option>
+                                <option value="capacity-asc">Capacity Low-High</option>
+                                <option value="capacity-desc">Capacity High-Low</option>
+                            </select>
+                        </div>
+                        <div class="sidebar-cta">
+                            <a href="contact.html" class="btn-primary w-full text-center"><i class="fas fa-file-invoice mr-2"></i>Request a Quote</a>
+                        </div>
+                    </aside>
+
+                    <!-- Right - Product Grid -->
+                    <main class="product-main">
+
+                        <!-- All Products (dynamically rendered) -->
+                        <div id="tab-all" class="tab-content active">
+                            <div class="product-header">
+                                <h3 class="product-header-title">All Products</h3>
+                                <span class="filter-count" id="product-count">181 products</span>
+                            </div>
+                            <div class="grid-3" id="grid-all"></div>
+                        </div>
+
+                        <div id="tab-cans" class="tab-content">
+                            <div class="product-header"><h3 class="product-header-title">Plastic Cans</h3><span class="filter-count">3 products</span></div>
+                            <div class="grid-3" id="grid-cans"></div>
+                        </div>
+
+                        <div id="tab-jars" class="tab-content">
+                            <div class="product-header"><h3 class="product-header-title">Plastic Jars</h3><span class="filter-count">3 products</span></div>
+                            <div class="grid-3" id="grid-jars"></div>
+                        </div>
+
+                        <div id="tab-bottles" class="tab-content">
+                            <div class="product-header"><h3 class="product-header-title">Plastic Bottles</h3><span class="filter-count">3 products</span></div>
+                            <div class="grid-3" id="grid-bottles"></div>
+                        </div>
+
+                        <div id="tab-caps" class="tab-content">
+                            <div class="product-header"><h3 class="product-header-title">Caps &amp; Closures</h3><span class="filter-count">3 products</span></div>
+                            <div class="grid-3" id="grid-caps"></div>
+                        </div>
+
+                        <div id="tab-machinery" class="tab-content">
+                            <div class="product-header"><h3 class="product-header-title">Packaging Machinery</h3><span class="filter-count">3 products</span></div>
+                            <div class="grid-3" id="grid-machinery"></div>
+                        </div>
+
+                        <div id="tab-cups" class="tab-content">
+                            <div class="product-header"><h3 class="product-header-title">Plastic Cups</h3><span class="filter-count">3 products</span></div>
+                            <div class="grid-3" id="grid-cups"></div>
+                        </div>
+
+                        <div id="tab-straws" class="tab-content">
+                            <div class="product-header"><h3 class="product-header-title">Straws</h3><span class="filter-count">2 products</span></div>
+                            <div class="grid-3" id="grid-straws"></div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Catalog -->
+        <section class="section section-light reveal">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Download Our Product Catalog</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Get complete specifications, pricing, and customization options for our full product range.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="download-card reveal-scale delay-2">
+                        <div class="card-top">
+                            <i class="fas fa-file-pdf"></i>
+                            <h4>Full Catalog 2026</h4>
+                            <p>Complete product range with specs, 45 pages</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="btn-download" onclick="showToast('Catalog download will be available soon. Contact us for details.', ''); return false;">
+                                <i class="fas fa-download mr-2"></i>Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="download-card reveal-scale delay-4">
+                        <div class="card-top">
+                            <i class="fas fa-file-alt"></i>
+                            <h4>Price List 2026</h4>
+                            <p>Current pricing for standard products and MOQ</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="contact.html" class="btn-download">
+                                <i class="fas fa-envelope mr-2"></i>Request Price List
+                            </a>
+                        </div>
+                    </div>
+                    <div class="download-card reveal-scale delay-6">
+                        <div class="card-top">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Certificates</h4>
+                            <p>ISO 9001, FDA, SGS certification documents</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="contact.html" class="btn-download">
+                                <i class="fas fa-download mr-2"></i>Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section-primary reveal">
+            <div class="container text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Need Custom Packaging?</h2>
+                <p class="text-green-100 text-lg mb-10">We offer complete custom packaging solutions including mold design, custom colors and printing.</p>
+                <a href="contact.html" class="btn-white">Request Custom Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>CHINPK</h3>
+                    <p>Your trusted China partner for FDA-compliant plastic packaging. 17+ years, 500+ global clients, 50+ countries. China manufacturing, Western quality standards.</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="inline-flex items-center gap-1 text-xs bg-white/10 rounded-full px-3 py-1 text-green-200"><i class="fas fa-star"></i> 4.8/5</span>
+                        <span class="inline-flex items-center gap-1 text-xs bg-white/10 rounded-full px-3 py-1 text-green-200"><i class="fas fa-bolt"></i> ≤2h</span>
+                        <span class="inline-flex items-center gap-1 text-xs bg-white/10 rounded-full px-3 py-1 text-green-200"><i class="fas fa-reply"></i> 98.7%</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">PET Plastic Cans</a></li>
+                        <li><a href="products.html">Plastic Jars</a></li>
+                        <li><a href="products.html">Plastic Bottles</a></li>
+                        <li><a href="products.html">Caps &amp; Closures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About CHINPK</a></li>
+                        <li><a href="news.html">News &amp; Insights</a></li>
+                        <li><a href="about.html">Certifications</a></li>
+                        <li><a href="solutions.html">Industry Solutions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope mr-2 icon-green"></i><a href="mailto:sales@chinpk.com">sales@chinpk.com</a></li>
+                        <li><i class="fas fa-phone mr-2 icon-green"></i><a href="tel:+8615939482575">+86 159 3948 2575</a></li>
+                        <li><i class="fab fa-whatsapp mr-2 icon-green"></i><a href="https://wa.me/8615939482575" target="_blank">WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt mr-2 icon-green"></i>Guangzhou, Guangdong, China</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CHINPK Packaging. All rights reserved. | <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+        // Render all product grids from single-source products-data.js
+        var PER_PAGE = 9;
+
+        var categoryMap = {
+            'cans': 'Plastic Cans',
+            'jars': 'Plastic Jars',
+            'bottles': 'Plastic Bottles',
+            'caps': 'Caps &amp; Closures',
+            'machinery': 'Packaging Machinery',
+            'cups': 'Plastic Cups',
+            'straws': 'Straws'
+        };
+
+        function renderProductCard(p) {
+            var cap = p.specs && p.specs['Capacity'] ? p.specs['Capacity'] : '';
+            var mat = p.specs && p.specs['Material'] ? p.specs['Material'] : '';
+            var moq = p.specs && p.specs['MOQ'] ? p.specs['MOQ'] : '';
+            var badgeClass = (p.leadTime === 'In Stock' || p.leadTime === 'Fast Ship') ? 'badge-orange' : 'badge-green';
+            var badgeText = (p.leadTime === 'In Stock' || p.leadTime === 'Fast Ship') ? p.leadTime : 'Customizable';
+            return '<article class="product-card card-hover" data-product-id="' + p.id + '" data-name="' + p.name + '" data-capacity="' + (parseInt(p.specs && p.specs['Capacity']) || 0) + '" data-category="' + p.category + '">' +
+                '<img src="' + p.image + '?w=500&h=400&fit=crop" alt="' + p.imageAlt + '" class="w-full h-48 object-cover" loading="lazy" decoding="async">' +
+                '<div class="p-5">' +
+                    '<h4 class="product-card-title">' + p.name + '</h4>' +
+                    '<div class="product-card-specs">' +
+                        (cap ? '<p><span>' + (p.category === 'machinery' || p.category === 'caps' ? 'Type' : 'Capacity') + ':</span> ' + cap + '</p>' : '') +
+                        (mat ? '<p><span>Material:</span> ' + mat + '</p>' : '') +
+                        (moq ? '<p><span>MOQ:</span> ' + moq + '</p>' : '') +
+                    '</div>' +
+                    '<div class="product-card-footer">' +
+                        '<span class="badge ' + badgeClass + '">' + badgeText + '</span>' +
+                        '<a href="product-detail.html?id=' + p.id + '" class="icon-green font-semibold hover:underline text-sm">View Details</a>' +
+                    '</div>' +
+                '</div>' +
+            '</article>';
+        }
+
+        function getPaginationHtml(currentPage, totalPages) {
+            if (totalPages <= 1) return '';
+            var html = '<div class="pagination">';
+            html += '<button class="pag-btn" data-page="' + (currentPage - 1) + '"' + (currentPage <= 1 ? ' disabled' : '') + '><i class="fas fa-chevron-left"></i> Prev</button>';
+            html += '<div class="pag-pages">';
+            var start = Math.max(1, currentPage - 2);
+            var end = Math.min(totalPages, currentPage + 2);
+            if (start > 1) { html += '<span class="pag-dots">...</span>'; }
+            for (var i = start; i <= end; i++) {
+                html += '<button class="pag-num' + (i === currentPage ? ' active' : '') + '" data-page="' + i + '">' + i + '</button>';
+            }
+            if (end < totalPages) { html += '<span class="pag-dots">...</span>'; }
+            html += '</div>';
+            html += '<button class="pag-btn" data-page="' + (currentPage + 1) + '"' + (currentPage >= totalPages ? ' disabled' : '') + '>Next <i class="fas fa-chevron-right"></i></button>';
+            html += '</div>';
+            return html;
+        }
+
+        function renderGrid(gridId, products, page) {
+            var grid = document.getElementById(gridId);
+            if (!grid) return;
+            var totalPages = Math.ceil(products.length / PER_PAGE) || 1;
+            var start = (page - 1) * PER_PAGE;
+            var pageProducts = products.slice(start, start + PER_PAGE);
+            grid.innerHTML = pageProducts.map(renderProductCard).join('') + getPaginationHtml(page, totalPages);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var currentPage = {};
+            var gridIds = ['all', 'cans', 'jars', 'bottles', 'caps', 'machinery', 'cups', 'straws'];
+            gridIds.forEach(function(id) { currentPage[id] = 1; });
+
+            var allGrid = document.getElementById('grid-all');
+
+            function renderAll() {
+                var activeTab = document.querySelector('.tab-content.active');
+                var activeId = activeTab ? activeTab.id.replace('tab-', '') : 'all';
+
+                if (activeId === 'all') {
+                    renderGrid('grid-all', window.PRODUCTS, currentPage['all']);
+                } else {
+                    var filtered = window.PRODUCTS.filter(function(p) { return p.category === activeId; });
+                    renderGrid('grid-' + activeId, filtered, currentPage[activeId]);
+                }
+
+                // Attach pagination click handlers
+                document.querySelectorAll('.pag-btn, .pag-num').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        if (this.disabled) return;
+                        var page = parseInt(this.getAttribute('data-page'));
+                        var grid = this.closest('.grid-3');
+                        if (!grid) return;
+                        // Determine which category this grid belongs to
+                        for (var g = 0; g < gridIds.length; g++) {
+                            var gid = gridIds[g];
+                            if (grid.id === 'grid-' + gid) {
+                                currentPage[gid] = page;
+                                break;
+                            }
+                        }
+                        renderAll();
+                        window.scrollTo({ top: grid.offsetTop - 120, behavior: 'smooth' });
+                    });
+                });
+            }
+
+            if (allGrid && window.PRODUCTS) {
+                renderAll();
+
+                // Pre-render category grids (hidden initially)
+                gridIds.slice(1).forEach(function(cat) {
+                    var grid = document.getElementById('grid-' + cat);
+                    if (grid) {
+                        var filtered = window.PRODUCTS.filter(function(p) { return p.category === cat; });
+                        renderGrid('grid-' + cat, filtered, 1);
+                    }
+                });
+            }
+
+            // Hash tab activation
+            var hash = window.location.hash.replace('#tab-', 'tab-');
+            if (hash && document.getElementById(hash)) {
+                var targetBtn = document.querySelector('.sidebar-btn[data-tab="' + hash + '"]');
+                if (targetBtn) targetBtn.click();
+            }
+
+            // Search & Sort
+            var searchInput = document.getElementById('product-search');
+            var sortSelect = document.getElementById('product-sort');
+            var countEl = document.getElementById('product-count');
+
+            function filterAndSort() {
+                var query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+                var sortVal = sortSelect ? sortSelect.value : 'default';
+
+                var activeTab = document.querySelector('.tab-content.active');
+                var activeId = activeTab ? activeTab.id.replace('tab-', '') : 'all';
+                var products = activeId === 'all' ? window.PRODUCTS : window.PRODUCTS.filter(function(p) { return p.category === activeId; });
+
+                // Filter - search name, description, category, specs, and applications
+                if (query) {
+                    products = products.filter(function(p) {
+                        var searchText = (p.name + ' ' + (p.shortDesc || '') + ' ' + (p.categoryLabel || '') + ' ' + (p.applications || []).join(' ')).toLowerCase();
+                        // Also search specs values
+                        if (p.specs) {
+                            for (var key in p.specs) {
+                                searchText += ' ' + (p.specs[key] || '').toLowerCase();
+                            }
+                        }
+                        return searchText.indexOf(query) !== -1;
+                    });
+                }
+
+                // Sort
+                if (sortVal !== 'default') {
+                    products = products.slice().sort(function(a, b) {
+                        if (sortVal === 'name-asc') return a.name.localeCompare(b.name);
+                        if (sortVal === 'name-desc') return b.name.localeCompare(a.name);
+                        var cA = parseInt(a.specs && a.specs['Capacity']) || 0;
+                        var cB = parseInt(b.specs && b.specs['Capacity']) || 0;
+                        if (sortVal === 'capacity-asc') return cA - cB;
+                        if (sortVal === 'capacity-desc') return cB - cA;
+                        return 0;
+                    });
+                }
+
+                if (countEl) countEl.textContent = products.length + ' product' + (products.length !== 1 ? 's' : '');
+
+                // Re-render with pagination reset
+                var catKey = activeId;
+                currentPage[catKey] = 1;
+                if (activeId === 'all') {
+                    renderGrid('grid-all', products, 1);
+                } else {
+                    renderGrid('grid-' + activeId, products, 1);
+                }
+
+                // Re-attach pagination
+                document.querySelectorAll('.pag-btn, .pag-num').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        if (this.disabled) return;
+                        var page = parseInt(this.getAttribute('data-page'));
+                        var grid = this.closest('.grid-3');
+                        if (!grid) return;
+                        for (var g = 0; g < gridIds.length; g++) {
+                            var gid = gridIds[g];
+                            if (grid.id === 'grid-' + gid) {
+                                currentPage[gid] = page;
+                                break;
+                            }
+                        }
+                        renderAll();
+                        window.scrollTo({ top: document.querySelector('.product-layout').offsetTop - 100, behavior: 'smooth' });
+                    });
+                });
+            }
+
+            if (searchInput) searchInput.addEventListener('input', filterAndSort);
+            if (sortSelect) sortSelect.addEventListener('change', filterAndSort);
+
+            document.querySelectorAll('.sidebar-btn, .tab-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() { setTimeout(filterAndSort, 50); });
+            });
+        });
+    </script>
+</body>
+</html>
