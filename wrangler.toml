@@ -1,6 +1,0 @@
-# Cloudflare Pages configuration
-name = "chinpk"
-compatibility_date = "2025-06-01"
-
-# Output directory (Astro default)
-pages_build_output_dir = "dist"
